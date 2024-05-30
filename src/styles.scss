@@ -1,0 +1,410 @@
+/* You can add global styles to this file, and also import other style files */
+/* Typography */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Ubuntu:300,400,500,700");
+
+/* Normalize  */
+html {
+  font-family: "Open Sans", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  margin: 0;
+  color: #a1aed4;
+  overflow-x: hidden;
+  background-color: #070b28 !important;
+}
+
+body.modal-open {
+  padding-right: 0px !important;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 1.0833333333;
+}
+
+h2 {
+  font-size: 52px;
+  line-height: 1.4444444444;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 1.0833333333;
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 1.2380952381;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+}
+
+p {
+  font-size: 18px;
+  color: #a1aed4;
+  line-height: 1.625;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+a i {
+  padding: 0 2px;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  list-style: none;
+}
+
+/*input and button type focus outline disable*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+select:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #ddd;
+}
+
+/**
+ * 5.0 - Alignments
+ */
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto 1.75em;
+}
+
+@-webkit-keyframes opacityAnimation {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+@-webkit-keyframes upDownAnimation {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 80px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+@keyframes upDownAnimation {
+  0% {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 80px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+@-webkit-keyframes phoneAni {
+  0% {
+    margin: 0px;
+  }
+  33% {
+    margin-left: 5px;
+  }
+  66% {
+    margin-left: -5px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+@keyframes phoneAni {
+  0% {
+    margin: 0px;
+  }
+  33% {
+    margin-left: 5px;
+  }
+  66% {
+    margin-left: -5px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+@-webkit-keyframes manAni {
+  0% {
+    margin: 0px;
+  }
+  33% {
+    margin-top: 5px;
+  }
+  66% {
+    margin-top: -5px;
+  }
+  100% {
+    margin: 0px;
+  }
+}
+@keyframes manAni {
+  0% {
+    margin: 0px;
+  }
+  33% {
+    margin-top: 5px;
+  }
+  66% {
+    margin-top: -5px;
+  }
+  100% {
+    margin: 0px;
+  }
+}
+@-webkit-keyframes shieldAni {
+  0% {
+    margin: 0px;
+  }
+  33% {
+    margin-top: 5px;
+  }
+  66% {
+    margin-top: -5px;
+  }
+  100% {
+    margin: 0px;
+  }
+}
+@keyframes shieldAni {
+  0% {
+    margin: 0px;
+  }
+  33% {
+    margin-top: 5px;
+  }
+  66% {
+    margin-top: -5px;
+  }
+  100% {
+    margin: 0px;
+  }
+}
+@-webkit-keyframes rippleAni {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  33% {
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+  }
+  66% {
+    -webkit-transform: translate(-5px, 5px);
+    transform: translate(-5px, 5px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes rippleAni {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  33% {
+    -webkit-transform: translate(5px, -5px);
+    transform: translate(5px, -5px);
+  }
+  66% {
+    -webkit-transform: translate(-5px, 5px);
+    transform: translate(-5px, 5px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+}
+@-webkit-keyframes ripple2Ani {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  33% {
+    -webkit-transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px);
+  }
+  66% {
+    -webkit-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes ripple2Ani {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  33% {
+    -webkit-transform: translate(-5px, -5px);
+    transform: translate(-5px, -5px);
+  }
+  66% {
+    -webkit-transform: translate(5px, 5px);
+    transform: translate(5px, 5px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+}
+/* Global style */
+.mybtn1 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 14px 35px;
+  display: inline-block;
+  color: #fff;
+  border: 0px;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  background-image: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(rgb(255, 52, 77)),
+    to(rgb(210, 39, 60))
+  );
+  background-image: linear-gradient(
+    to left,
+    rgb(255, 52, 77),
+    rgb(210, 39, 60)
+  );
+}
+.mybtn1:hover {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgb(255, 52, 77)),
+    to(rgb(210, 39, 60))
+  );
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 52, 77),
+    rgb(210, 39, 60)
+  );
+  color: #fff;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}
+
+.mybtn2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  height: 50px;
+  line-height: 50px;
+  width: 190px;
+  display: inline-block;
+  color: #fff;
+  border: 0px;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(#1c294e),
+    to(#1c294e)
+  );
+  background: linear-gradient(to left, #1c294e, #1c294e);
+}
+.mybtn2:hover {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgb(255, 52, 77)),
+    to(rgb(210, 39, 60))
+  );
+  background: linear-gradient(to right, rgb(255, 52, 77), rgb(210, 39, 60));
+  color: #fff;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+}

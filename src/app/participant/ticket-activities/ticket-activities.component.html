@@ -1,0 +1,128 @@
+<section class="activities">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="section-heading">
+          <h5 class="subtitle">Weekly Lottery</h5>
+          <h2 class="title" style="font-size: 3rem">Ticket Activities</h2>
+          <p class="text">
+            Winners are selected using a hash that is generated precisely at the
+            moment the countdown concludes.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="tab-menu-area">
+          <ul class="nav nav-lend mb-3" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="my-tickets-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#my-tickets"
+                type="button"
+                role="tab"
+                aria-controls="my-tickets"
+                aria-selected="true"
+              >
+                Address Tickets
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content" style="display: flex; justify-content: center">
+          <div
+            class="tab-pane fade show active"
+            id="my-tickets"
+            role="tabpanel"
+            aria-labelledby="my-tickets-tab"
+            style="min-width: 37rem; text-align: center"
+          >
+            <div class="responsive-table">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Ticket Numbers</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let ticket of tickets">
+                    <td>
+                      <ul class="number-list">
+                        <li *ngFor="let char of ticket.split('')">
+                          {{ char }}
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination-wrapper">
+                <nav aria-label="Ticket navigation">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item" [class.disabled]="currentPage === 1">
+                      <button
+                        class="page-link"
+                        (click)="loadTickets(address, 1)"
+                        [disabled]="currentPage === 1"
+                      >
+                        « First
+                      </button>
+                    </li>
+                    <li class="page-item" [class.disabled]="currentPage === 1">
+                      <button
+                        class="page-link"
+                        (click)="loadTickets(address, currentPage - 1)"
+                        [disabled]="currentPage === 1"
+                      >
+                        ‹ Prev
+                      </button>
+                    </li>
+                    <li
+                      class="page-item"
+                      *ngFor="let page of pages"
+                      [class.active]="page === currentPage"
+                    >
+                      <button
+                        class="page-link"
+                        (click)="loadTickets(address, page)"
+                      >
+                        {{ page }}
+                      </button>
+                    </li>
+                    <li
+                      class="page-item"
+                      [class.disabled]="currentPage === totalPages"
+                    >
+                      <button
+                        class="page-link"
+                        (click)="loadTickets(address, currentPage + 1)"
+                        [disabled]="currentPage === totalPages"
+                      >
+                        Next ›
+                      </button>
+                    </li>
+                    <li
+                      class="page-item"
+                      [class.disabled]="currentPage === totalPages"
+                    >
+                      <button
+                        class="page-link"
+                        (click)="loadTickets(address, totalPages)"
+                        [disabled]="currentPage === totalPages"
+                      >
+                        Last » 
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

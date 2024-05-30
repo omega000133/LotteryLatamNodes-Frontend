@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { SummaryComponent } from './summary/summary.component';
+import { CountdownComponent } from './countdown/countdown.component';
+import { StaticsticsComponent } from './staticstics/staticstics.component';
+import { TicketActivitiesComponent } from './ticket-activities/ticket-activities.component';
+import { HeaderComponent } from '../home/header/header.component';
+
+@Component({
+  selector: 'app-participant',
+  standalone: true,
+  templateUrl: './participant.component.html',
+  styleUrl: './participant.component.scss',
+  imports: [
+    SummaryComponent,
+    CountdownComponent,
+    StaticsticsComponent,
+    TicketActivitiesComponent,
+    HeaderComponent,
+  ],
+})
+export class ParticipantComponent {
+  text: string = 'participant';
+}
