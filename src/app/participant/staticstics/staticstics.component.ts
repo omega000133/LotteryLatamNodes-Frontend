@@ -17,6 +17,7 @@ export class StaticsticsComponent {
     balance: 0,
     ticket_cost: 0,
     total_tickets: 0,
+    current_balance: 0,
   };
 
   constructor(

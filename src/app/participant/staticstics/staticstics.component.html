@@ -44,6 +44,14 @@
                   </div>
                 </div>
               </div>
+              @if ((statistics.current_balance - statistics.balance) > 0) {
+                <div class="remain-balance">
+                  <h4 class="title">REMAIN BALANCE</h4>
+                  <div class="number-box">
+                    You staked {{ statistics.current_balance - statistics.balance }} UTIA with us in this week. You can use this UTIA for next Lottery
+                  </div>
+                </div>
+              }
               <div class="game-numbers">
                 <h4 class="title">GAME NUMBERS</h4>
                 <div class="number-box">
