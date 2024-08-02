@@ -11,4 +11,11 @@ import { Winner } from 'src/app/models/ticket/winner.entity';
 })
 export class RecentWinnerComponent {
   @Input() winner!: Winner;
+  winner_amount: string = '';
+
+  ngOnInit(): void {
+    if (this.winner && this.winner.jackpot) {
+      this.winner_amount = (this.winner.jackpot.reward * (this.winner.jackpot.winning_percentage / 100)).toFixed(1);
+    }
+  }
 }

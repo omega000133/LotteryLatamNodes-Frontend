@@ -14,12 +14,9 @@
                     <div class="info-box">
                       <h4 class="title">BALANCE</h4>
                       <div class="number">
-                        <img
-                          style="max-width: 1rem"
-                          src="https://framerusercontent.com/images/6oZ4FT1kBDFymx54SLCto0RVrI.png"
-                          alt=""
-                        />
-                        {{ statistics.balance }} UTIA
+                        <img style="max-width: 1rem"
+                          src="https://framerusercontent.com/images/6oZ4FT1kBDFymx54SLCto0RVrI.png" alt="" />
+                        {{ statistics.balance }} TIA
                       </div>
                     </div>
                   </div>
@@ -27,11 +24,8 @@
                     <div class="info-box">
                       <h4 class="title">1 TICKET COSTS</h4>
                       <div class="number">
-                        <img
-                          style="max-width: 1rem"
-                          src="https://framerusercontent.com/images/6oZ4FT1kBDFymx54SLCto0RVrI.png"
-                          alt=""
-                        />
+                        <img style="max-width: 1rem"
+                          src="https://framerusercontent.com/images/6oZ4FT1kBDFymx54SLCto0RVrI.png" alt="" />
                         {{ statistics.ticket_cost }}
                       </div>
                     </div>
@@ -45,12 +39,13 @@
                 </div>
               </div>
               @if ((statistics.current_balance - statistics.balance) > 0) {
-                <div class="remain-balance">
-                  <h4 class="title">REMAIN BALANCE</h4>
-                  <div class="number-box">
-                    You staked {{ statistics.current_balance - statistics.balance }} UTIA with us in this week. You can use this UTIA for next Lottery
-                  </div>
+              <div class="remain-balance">
+                <h4 class="title">REMAIN BALANCE</h4>
+                <div class="number-box">
+                  You staked {{ statistics.current_balance - statistics.balance }} TIA with us in this week. You can use
+                  this TIA for next Lottery
                 </div>
+              </div>
               }
               <div class="game-numbers">
                 <h4 class="title">GAME NUMBERS</h4>

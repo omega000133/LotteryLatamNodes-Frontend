@@ -22,7 +22,7 @@ export class SummaryComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private ticketService: TicketService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -38,6 +38,7 @@ export class SummaryComponent implements OnInit {
   loadSummaryData(address: string): void {
     this.ticketService.getAddressSummary(address).subscribe({
       next: (summary: Summary) => {
+        summary.latest_jackpot_amount = this.formatNumber(parseFloat(summary.latest_jackpot_amount))
         this.summaryData = summary;
       },
       error: (error) => {
@@ -58,5 +59,19 @@ export class SummaryComponent implements OnInit {
         this.router.navigate(['/home']);
       }
     });
+  }
+
+  formatNumber(num: number): string {
+    if (num >= 1e12) {
+      return (num / 1e12).toFixed(1) + 'T';
+    } else if (num >= 1e9) {
+      return (num / 1e9).toFixed(1) + 'B';
+    } else if (num >= 1e6) {
+      return (num / 1e6).toFixed(1) + 'M';
+      // } else if (num >= 1e3) {
+      //   return (num / 1e3).toFixed(1) + 'K';
+    } else {
+      return num.toFixed(1).toString();
+    }
   }
 }
