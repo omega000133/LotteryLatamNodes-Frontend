@@ -4,6 +4,7 @@ import { CountdownComponent } from './countdown/countdown.component';
 import { StaticsticsComponent } from './staticstics/staticstics.component';
 import { TicketActivitiesComponent } from './ticket-activities/ticket-activities.component';
 import { HeaderComponent } from '../home/header/header.component';
+import { SpinnerService } from '../services/spinner/spinner.service';
 
 @Component({
   selector: 'app-participant',
@@ -20,4 +21,10 @@ import { HeaderComponent } from '../home/header/header.component';
 })
 export class ParticipantComponent {
   text: string = 'participant';
+
+  constructor(private spinnerService: SpinnerService) { }
+  
+  ngOnInit(): void {
+    this.spinnerService.hideSpinner()
+  }
 }
