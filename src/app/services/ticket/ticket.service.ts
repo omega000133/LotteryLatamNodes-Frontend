@@ -6,6 +6,7 @@ import { Winner } from 'src/app/models/ticket/winner.entity';
 import { Summary } from 'src/app/models/ticket/summary.entity';
 import { Statistics } from 'src/app/models/ticket/statistics';
 import { Ticket } from 'src/app/models/ticket/ticket.entity';
+import { History } from 'src/app/models/ticket/history.entity';
 
 @Injectable({
   providedIn: 'root',
@@ -67,5 +68,23 @@ export class TicketService extends ServiceGenerator {
       next: string;
       previous: string;
     }>(this.buildurl('ticket/tickets-by-address/'), { params });
+  }
+
+  getHistoryByAddress(
+    address: string,
+    page: number = 1,
+    pageSize: number = 10
+  ): Observable<any> {
+    let params = new HttpParams()
+      .set('address', address)
+      .set('page', page.toString())
+      .set('page_size', pageSize.toString());
+
+    return this.httpClient.get<{
+      winners: History[];
+      count: number;
+      next: string;
+      previous: string;
+    }>(this.buildurl('ticket/winners-by-address/'), { params });
   }
 }

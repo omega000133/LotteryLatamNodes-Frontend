@@ -1,0 +1,137 @@
+.histories {
+  padding: 50px 0px 88px;
+}
+
+.histories:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #070b28;
+  z-index: -99;
+}
+.histories .section-heading {
+  margin-bottom: 58px;
+}
+
+.section-heading {
+  text-align: center;
+}
+
+.section-heading .subtitle {
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(rgb(255, 52, 77)),
+    to(rgb(210, 39, 60))
+  );
+  background: linear-gradient(to left, rgb(255, 52, 77), rgb(210, 39, 60));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.section-heading .subtitle.extra-padding {
+  margin-bottom: 17px;
+}
+.section-heading .title {
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.section-heading .title.extra-padding {
+  margin-bottom: 20px;
+}
+.histories {
+  .total-earn,
+  .history-item {
+    border-radius: 10px;
+    background-color: #0b122e;
+    color: #fff;
+    padding: 21px 30px 20px;
+    max-width: 40rem;
+    width: 100%;
+    margin: 0 auto;
+    .content {
+      display: flex;
+      align-items: flex-end;
+      gap: 1rem;
+      .number {
+        font-size: calc(2rem + 0.3vw);
+        color: #fff;
+        font-weight: 700;
+        width: 100%;
+        text-wrap: nowrap;
+        margin-bottom: 0;
+      }
+      .chart {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .win-lottery-title {
+    max-width: 40rem;
+    margin: 2rem auto 1rem;
+    color: rgb(255, 52, 77);
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .history-item {
+    border: solid 2px #c9c9c9;
+    margin-top: 24px;
+    .overview,
+    .detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .overview {
+      .number {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      .date {
+        font-size: 0.9rem;
+      }
+    }
+
+    .detail {
+      margin-top: 30px;
+      .price {
+        font-size: 1.5rem;
+        color: #f6a623;
+        text-wrap: nowrap;
+        font-weight: 700;
+      }
+      a {
+        color: rgb(255, 52, 77);
+        text-decoration: none;
+      }
+      figure {
+        @media screen and (max-width: 400px) {
+          display: none;
+        }
+        width: 86px;
+        height: 32px;
+        margin-bottom: 0;
+        img {
+          height: 100%;
+          margin-left: auto;
+          float: right;
+        }
+      }
+    }
+  }
+}

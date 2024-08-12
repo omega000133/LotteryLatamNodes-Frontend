@@ -1,0 +1,56 @@
+<section class="histories">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="section-heading">
+          <h5 class="subtitle">TOTALLY LOTTERY</h5>
+          <h2 class="title" style="font-size: 3rem">WINNING HISTORY</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="total-earn">
+          <h5 class="title">TOTAL EARNING</h5>
+          <div class="content">
+            <p class="number">{{ totalReward }} TIA</p>
+            <figure class="chart">
+              <img src="/assets/images/participant/stats.svg" alt="" />
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <p class="win-lottery-title" *ngIf="histories.length > 0">
+          Win Lotteris
+        </p>
+        <div class="history-item" *ngFor="let history of histories">
+          <div class="overview">
+            <span class="number">#{{ history.ticket_hash }}</span>
+            <span class="date"
+              >Earned Date: {{ history.jackpot.draw_date }}</span
+            >
+          </div>
+          <div class="detail">
+            <span class="price"
+              >{{
+                (
+                  (history.jackpot.reward *
+                    history.jackpot.winning_percentage) /
+                  100
+                ).toFixed(1)
+              }}
+              TIA</span
+            >
+            <a href="{{ history.transaction }}" target="_blank"
+              >View Transaction</a
+            >
+            <figure>
+              <img src="/assets/images/participant/celestia-icon.png" alt="" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
