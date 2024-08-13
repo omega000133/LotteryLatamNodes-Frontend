@@ -6,13 +6,13 @@ import { History } from 'src/app/models/ticket/history.entity';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-history',
+  selector: 'app-winning-history',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './history.component.html',
-  styleUrl: './history.component.scss'
+  templateUrl: './winning-history.component.html',
+  styleUrl: './winning-history.component.scss'
 })
-export class HistoryComponent {
+export class WinningHistoryComponent {
   histories: History[] = [];
   address: string = '';
   totalReward: number = 0;

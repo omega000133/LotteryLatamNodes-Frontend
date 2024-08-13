@@ -87,4 +87,11 @@ export class TicketService extends ServiceGenerator {
       previous: string;
     }>(this.buildurl('ticket/winners-by-address/'), { params });
   }
+
+  checkAddress(address: string): Observable<any> {
+    let params = new HttpParams().set('address', address);
+    return this.httpClient.get<any>(this.buildurl('ticket/check-address/'), {
+      params,
+    });
+  }
 }

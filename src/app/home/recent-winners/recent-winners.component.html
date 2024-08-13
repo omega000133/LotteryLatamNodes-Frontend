@@ -7,6 +7,18 @@
           <h2 class="title">Recent Winners</h2>
         </div>
       </div>
+      <div class="col-lg-6 col-md-10">
+        <form (ngSubmit)="onSubmit()" class="history-search">
+          <input
+            type="text"
+            class="w-100"
+            [(ngModel)]="searchAddress"
+            name="searchAddress"
+            placeholder="Your address"
+          />
+          <span (click)="onSubmit()"><fa-icon [icon]="faSearch"></fa-icon></span>
+        </form>
+      </div>
     </div>
     <div class="row">
       <app-recent-winner
