@@ -120,8 +120,17 @@
           &.item-right {
             background-color: #fff;
           }
+          &.item-dark {
+            background-color: #161621;
+            border: 1px dashed #d34b4b;
+            margin-left: 50px;
+            @media screen and (max-width: 768px) {
+              margin-left: 20px;
+            }
+          }
           .icon {
             width: 40px;
+            min-width: 40px;
             height: 40px;
             border-radius: 50%;
             background-color: #30d158;
@@ -142,6 +151,9 @@
                 0 50%
               );
             }
+            &.icon-dark {
+              background-color: #2e2e3a;
+          }
           }
           .text-content {
             display: flex;
@@ -152,6 +164,9 @@
               padding-right: 5px; 
               border-radius: 5px;
               background-color: #FFE4D0;
+              &.text-line-dark {
+                background-color: #fff;
+              }
             }
             a {
               color: #070b28;

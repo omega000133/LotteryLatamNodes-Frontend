@@ -44,18 +44,21 @@
         <h5 class="title">Recently Jackpot</h5>
         <div class="subtitle">Here are recently jackpots</div>
         <div class="content">
-          <div class="jackpot-item item-right" *ngFor="let jackpot of jackpots">
-            <div class="icon">
+          <div class="jackpot-item item-right" [ngClass]="{'item-dark': !jackpot.participant_address}" *ngFor="let jackpot of jackpots">
+            <div class="icon" [ngClass]="{'icon-dark': !jackpot.participant_address}">
               <div class="icon-check"></div>
             </div>
             <div class="text-content">
-              <div class="text-line">
+              <div class="text-line" [ngClass]="{'text-line-dark': !jackpot.participant_address}">
                 Winner Hash: {{ jackpot.ticket_hash }}
               </div>
-              <div class="text-line">
+              <div class="text-line" [ngClass]="{'text-line-dark': !jackpot.participant_address}" *ngIf="jackpot.participant_address">
+                Winner: {{ jackpot.participant_address }}
+              </div>
+              <div class="text-line" [ngClass]="{'text-line-dark': !jackpot.participant_address}">
                 Finished Date: {{ jackpot.jackpot.draw_date }}
               </div>
-              <a class="text-line" href="{{ jackpot.transaction }}" target="_blank">View Transaction</a>
+              <a class="text-line" [ngClass]="{'text-line-dark': !jackpot.participant_address}" href="{{ jackpot.transaction }}" target="_blank">View Transaction</a>
             </div>
           </div>
         </div>
