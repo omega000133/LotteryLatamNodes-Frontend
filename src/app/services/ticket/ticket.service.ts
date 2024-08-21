@@ -7,6 +7,7 @@ import { Summary } from 'src/app/models/ticket/summary.entity';
 import { Statistics } from 'src/app/models/ticket/statistics';
 import { Ticket } from 'src/app/models/ticket/ticket.entity';
 import { History } from 'src/app/models/ticket/history.entity';
+import { Jackpot } from 'src/app/models/ticket/jackpot.entity';
 
 @Injectable({
   providedIn: 'root',
@@ -93,5 +94,11 @@ export class TicketService extends ServiceGenerator {
     return this.httpClient.get<any>(this.buildurl('ticket/check-address/'), {
       params,
     });
+  }
+
+  getRecentJackpots(): Observable<Winner[]> {
+    return this.httpClient
+      .get<any>(this.buildurl('ticket/recent-jackpots/'))
+      .pipe(map((response) => response.results));
   }
 }

@@ -1,0 +1,65 @@
+<section class="hash">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="section-heading">
+          <h2 class="title" style="font-size: 3rem">How it works</h2>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="explain">
+        <h5 class="title">How to generate Winning Hash</h5>
+        <div class="subtitle">
+          The winning hash is determined by selecting the latest block string
+          closest to the lottery's finish time. This block's hash will be used
+          to identify the winner.
+        </div>
+        <div class="content">
+          <div class="steps">
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <div class="step-text">Generate Jackpot per week</div>
+            </div>
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-text">Participate Jackpot</div>
+            </div>
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-text">Choose Tickets</div>
+            </div>
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <div class="step-text">Distribute Tickets</div>
+            </div>
+            <div class="step-item">
+              <div class="step-number">5</div>
+              <div class="step-text">Wait for Draw.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="recent-jackpot">
+        <h5 class="title">Recently Jackpot</h5>
+        <div class="subtitle">Here are recently jackpots</div>
+        <div class="content">
+          <div class="jackpot-item item-right" *ngFor="let jackpot of jackpots">
+            <div class="icon">
+              <div class="icon-check"></div>
+            </div>
+            <div class="text-content">
+              <div class="text-line">
+                Winner Hash: {{ jackpot.ticket_hash }}
+              </div>
+              <div class="text-line">
+                Finished Date: {{ jackpot.jackpot.draw_date }}
+              </div>
+              <a class="text-line" href="{{ jackpot.transaction }}" target="_blank">View Transaction</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

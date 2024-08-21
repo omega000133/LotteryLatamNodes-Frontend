@@ -1,0 +1,172 @@
+.hash {
+  .title {
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+  }
+  .main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+
+    .title {
+      text-transform: none;
+      color: #eb2e45;
+      font-size: 24px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #6d8dbd;
+      font-size: 18px;
+      width: 80%;
+      margin: auto;
+      margin-top: 15px;
+    }
+
+    .content {
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    .explain,
+    .recent-jackpot {
+      width: 50%;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    .explain {
+      .content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        .step {
+          margin: auto;
+        }
+        .step-item {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 30px;
+          position: relative;
+        }
+
+        .step-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .step-item::before {
+          content: "";
+          position: absolute;
+          left: 13px;
+          top: 28px;
+          height: 100%;
+          width: 2px;
+          background-color: #eb2e45;
+        }
+
+        .step-number {
+          background-color: #fff;
+          border: 5px #eb2e45 solid;
+          color: #292930;
+          border-radius: 50%;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          font-weight: bold;
+          margin-right: 15px;
+          z-index: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .step-text {
+          font-size: 18px;
+          color: #6d8dbd;
+        }
+
+        .step-item:last-child::before {
+          display: none;
+        }
+      }
+    }
+
+    .recent-jackpot {
+      @media screen and (max-width: 768px) {
+        margin-top: 40px;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        .jackpot-item {
+          display: flex;
+          align-items: center;
+          padding: 15px;
+          border-radius: 10px;
+          width: 60%;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          @media screen and (max-width: 768px) {
+            width: 80%;
+          }
+          &.item-right {
+            background-color: #fff;
+          }
+          .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #30d158;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            .icon-check {
+              width: 20px;
+              height: 20px;
+              background-color: #ffffff;
+              clip-path: polygon(
+                14% 44%,
+                35% 64%,
+                87% 12%,
+                100% 26%,
+                35% 87%,
+                0 50%
+              );
+            }
+          }
+          .text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            .text-line {
+              padding-left: 5px; 
+              padding-right: 5px; 
+              border-radius: 5px;
+              background-color: #FFE4D0;
+            }
+            a {
+              color: #070b28;
+              display: flex;
+              &.text-line {
+                display: flex;
+                justify-content: flex-end;
+                width: fit-content;
+                margin-left: auto;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
