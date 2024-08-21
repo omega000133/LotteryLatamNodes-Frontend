@@ -31,7 +31,11 @@ export class RecentWinnersComponent implements OnInit {
   loadTopWinners(): void {
     this.ticketService.getTopWinners().subscribe({
       next: (winners: Winner[]) => {
-        this.winners = winners;
+        this.winners = winners.map((winner: Winner) => {
+          const winnerDate = new Date(winner.jackpot.draw_date);
+          winner.jackpot.draw_date = winnerDate.toISOString().split('T')[0];
+          return winner
+        });
       },
       error: (error) => {
         Swal.fire('Error', 'Error loading the winners', 'error');

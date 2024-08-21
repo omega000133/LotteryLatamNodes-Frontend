@@ -35,6 +35,9 @@ export class HowHashGenerateComponent {
             String(date.getSeconds()).padStart(2, '0');
 
           res.jackpot.draw_date = formattedDate
+          if (!res.participant_address || res.participant_address.length > 10) {
+            res.participant_address = `${res.participant_address.slice(0, 5)}...${res.participant_address.slice(-4)}`;
+          }
           return res;
         })
       }
