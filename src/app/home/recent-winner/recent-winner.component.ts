@@ -15,7 +15,7 @@ export class RecentWinnerComponent {
 
   ngOnInit(): void {
     if (this.winner && this.winner.jackpot) {
-      this.winner_amount = (this.winner.jackpot.reward * (this.winner.jackpot.winning_percentage / 100)).toFixed(1);
+      this.winner_amount = (this.winner.jackpot.reward * (this.winner.jackpot.reward_percentage / 100)).toFixed(1);
     }
   }
 }

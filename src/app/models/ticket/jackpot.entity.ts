@@ -1,5 +1,5 @@
 export interface Jackpot {
   reward: number;
-  winning_percentage: number;
+  reward_percentage: number;
   draw_date: string;
 }

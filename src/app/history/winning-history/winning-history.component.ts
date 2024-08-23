@@ -65,7 +65,7 @@ export class WinningHistoryComponent {
 
   private getTotalRewards(histories: History[]): number {
     const reward = histories.reduce((accumulator, history) => {
-      return accumulator + history.jackpot.reward * history.jackpot.winning_percentage / 100
+      return accumulator + history.jackpot.reward * history.jackpot.reward_percentage / 100
     }, 0)
 
     return parseFloat(reward.toFixed(1));
